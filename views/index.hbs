@@ -1,0 +1,299 @@
+<!doctype html>
+		<head>
+			<meta charset="utf-8">
+			<link rel="stylesheet"  href="style/style-adaptive.css" media="screen">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Milk </title>
+		</head>
+		<body>
+		<div class="wraper">
+			<header class="header">
+				<div class="container">
+					<div class="header__top">
+						<div class="header__logo">
+							<a href="#" class="logo">
+								<img src="photo/milk1.png"alt="" class="logo__pic">
+							</a>
+						</div>
+						<div class="header__search">
+							<div class="search">
+								<form action="" class="search__form">
+									<input type="text" name="#" id="#"placeholder="Поиск"  class="search__input">
+										<input type="submit" value="" class="search__submit" >
+								</form>
+							</div>
+						</div>
+						<div class="header__menu">
+							<ul class="menu">
+								<li class="menu__item">
+									<a href="#" class="menu__link">
+										<span class="menu__link-text">История заказов
+										</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">
+										<span class="menu__link-text">О компании
+										</span>
+									</a>
+								</li>
+								<li class="menu__item">
+									<div class= "menu__link , menu__link-iconed">
+										<span class="menu__link-icon">
+											<img src="photo/shopping.png" alt="" class="menu__link-icon-pic">
+										</span>
+										<span class="menu__link-text">Корзина</span>
+									</div>
+
+								</li>
+
+							</ul>
+						</div>
+				</div>
+			<nav class="nav">
+				<ul class="nav__list">
+
+					<li class="nav__item">
+						<a href="/" class="nav__link">
+							<span class="nav__icon"><img src="photo/milk.png" alt="">
+							</span>
+							<span class="nav__title">молоко
+							</span>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="cheese" class="nav__link" >
+							<span class="nav__icon"><img src="photo/cheease.png" alt="">
+							</span>
+							<span class="nav__title">сыр
+							</span>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="icecream" class="nav__link">
+							<span class="nav__icon"><img src="photo/ice.png" alt="">
+							</span>
+							<span class="nav__title">мороженое
+							</span>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="yogurt" class="nav__link">
+							<span class="nav__icon"><img src="photo/yogurt.png" alt="">
+							</span>
+							<span class="nav__title">йогурты
+							</span>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="milkshake" class="nav__link">
+							<span class="nav__icon"><img src="photo/ice crea.png" alt="">
+							</span>
+							<span class="nav__title">молочные коктейли
+							</span>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="chocolate" class="nav__link">
+							<span class="nav__icon"><img src="photo/choco.png" alt="">
+							</span>
+							<span class="nav__title">шоколад
+							</span>
+						</a>
+					</li>
+					<li class="nav__item">
+						<a href="cookie" class="nav__link">
+							<span class="nav__icon"><img src="photo/cookie.png" alt="">
+							</span>
+							<span class="nav__title">печенье
+							</span>
+						</a>
+					</li>
+
+				</ul>
+
+			</nav>
+		</div>
+			</header>
+
+		<section class="bread">
+			<div class="container">
+				<ul class="bread__list">
+					<li class="bread__item">
+						<a href="#" class="bread__link">
+						главная
+						</a>
+					</li>
+					&rarr;
+					<li class="bread__item">
+						{{#each category}}
+						<a href="#" class="bread__link">
+					  {{this.category}}
+						</a>
+							{{/each}}
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="section-title">
+			<div class="container">
+				<h1 class="title">
+					{{this.e}}
+				</h1>
+
+			</div>
+		<section class="content-wrapper">
+			<div class="container-sidebar">
+				<aside class="sidebar">
+					<ul  class="categories">
+						<li class="categories__item">
+							<a href="#" class="categories__link">
+								<span class="categories__icon">
+									<img src="photo/milkcup.png" alt="">
+								</span>
+								<span class="categories__text">
+									Продукты поштучно
+								</span>
+							</a>
+								<div class="categories__amount">1
+								</div>
+						</li>
+						<li class="categories__item">
+							<a href="#" class="categories__link">
+								<span class="categories__icon">
+									<img src="photo/milkcup.png" alt="">
+								</span>
+								<span class="categories__text">
+									Оптовые продукты
+								</span>
+							</a>
+								<div class="categories__amount">3
+								</div>
+						</li>
+						<li class="categories__item">
+
+							<a href="#" class="categories__link">
+								<span class="categories__icon">
+									<img src="photo/milkcup.png" alt="">
+								</span>
+								<span class="categories__text">
+									Фильтр
+								</span>
+							</a>
+								<div class="categories__amount">Не работает
+								</div>
+						</li>
+					</ul>
+				</aside>
+				<main class="content">
+                    {{#each products}}
+					<ul class="products">
+						<li class="products__item">
+							<div class="products__slideshow">
+								<div class="slideshow">
+										<div class="fotorama" data-nav="thumbs" data-width="100%"   data-ratio="400/400" data-fit="contain"  >
+
+											{{#each photos}}
+												<img src="photo/{{{this}}}">
+										{{/each}}
+									</div>
+								</div>
+							</div>
+							<div class="products__desk">
+								<h2 class="products__title">
+                                    {{this.name}}
+								</h2>
+								<div class="products__desc-content">
+									<ul>
+										{{#each description}}
+										<li> {{{this}}}</li>
+										{{/each}}
+									</ul>
+								</div>
+							</div>
+							<div class="products__price">
+								<div class="products__price-inner">
+									<div class="products__price-amount">
+                                        {{this.price}}
+									</div>
+										<div class="products__buy">купить
+										</div>
+								</div>
+							</div>
+						</li>
+
+					</ul>
+                    {{/each}}
+				</main>
+			</div>
+
+
+		</section>
+		<section class="pagination">
+			<div class="container__pagination">
+				<a href="#" class="pagination__control pagination__control-left">
+
+				</a>
+					<ul class="pagination__list">
+						<li class="pagination__item">
+
+							<a href="#" class="pagination__link">1
+							</a>
+						</li>
+						<li class="pagination__item">
+							<a href="#" class="pagination__link">2
+							</a>
+						</li>
+						<li class="pagination__item">
+							<a href="#" class="pagination__link">3
+							</a>
+						</li>
+						<li class="pagination__item">
+							<a href="#" class="pagination__link">4
+							</a>
+						</li>
+						<li class="pagination__item">
+							<a href="#" class="pagination__link">5
+							</a>
+						</li>
+						<li class="pagination__item">
+							<a href="#" class="pagination__link">6
+							</a>
+						</li>
+						<li class="pagination__item">
+							<a href="#" class="pagination__link">7
+							</a>
+						</li>
+					</ul>
+						<a href="#" class="pagination__control pagination__control-right">
+
+						</a>
+			</div>
+		</section>
+		<div class="empty"></div>
+		</div>
+
+		<div class="basket__window">
+			<div class="basket">
+				<div class="basket__close"></div>
+				<div class= "menu__link menu__link-iconed basket-block">
+					<span class="menu__link-icon">
+						<img src="photo/shopping.png" alt="" class="menu__link-icon-pic">
+					</span>
+					<span class="menu__link-text">Корзина</span>
+				</div>
+				<div class="basket__products"></div>
+			</div>
+		</div>
+	<footer class="footer">
+		<div class="container__footer">
+			<div class="foteer__address">
+				г.Санкт-Петербург,Лещинский проспект,Бц квартал
+			</div>
+				<div class="footer__copyright">
+					&copy;J.macronald
+				</div>
+		</div>
+	</footer>
+	 </body>
+	       <html/>

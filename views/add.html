@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Просто добавь молочка</title>
+</head>
+<body>
+    <h1>просто добавь молочка</h1>
+    <form action="#" th:action="@{/add}" th:object="${milk}" method="post">
+        <p>name: <input type="text" th:field="*{name}"></p>
+        <p>price: <input type="text" th:field="*{price}"></p>
+        <p>description: <input type="text" th:field="*{description}"></p>
+        <p><input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
